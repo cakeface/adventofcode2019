@@ -26,10 +26,11 @@ http_archive(
 )
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-
 maven_install(
     artifacts = [
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2",
+        "junit:junit:4.12",
+        "org.assertj:assertj-core:3.14.0",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
