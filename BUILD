@@ -55,6 +55,18 @@ kt_jvm_test(
     test_class = "com.ckfce.aoc19.day2.Day2UTest"
 )
 
+kt_jvm_test(
+    name = "day_3_unit_test",
+    size = "small",
+    srcs = [
+        "src/test/kotlin/com/ckfce/aoc19/day3/Day3UTest.kt",
+        ],
+    deps = [
+        ":unit_tests_lib",
+    ],
+    test_class = "com.ckfce.aoc19.day3.Day3UTest"
+)
+
 java_binary(
     name = "aoc19_app",
     main_class = "com.ckfce.aoc19.Runner",
