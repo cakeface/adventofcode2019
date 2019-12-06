@@ -16,28 +16,6 @@ class WireMapExact(val spec1: String, val spec2: String) {
         parse(spec2, wire2)
     }
 
-    fun closestIntersectionTraveled(): Int {
-        val intersections = wire1.points.intersect(wire2.points)
-        var wire1FirstDistance = 0
-        for (point in wire1.points) {
-            wire1FirstDistance++
-            if (intersections.contains(point)) {
-                wire1FirstDistance += distanceTo(point, wire2)
-                break
-            }
-        }
-
-        var wire2FirstDistance = 0
-        for (point in wire2.points) {
-            wire2FirstDistance++
-            if (intersections.contains(point)) {
-                wire2FirstDistance += distanceTo(point, wire1)
-                break
-            }
-        }
-        return min(wire1FirstDistance, wire2FirstDistance)
-    }
-
     /**
      * OK so my last one isn't working for some reason. Let's check all points. I guess there could
      * be an intersection that is not the closes on either route but overall is lower.
@@ -49,20 +27,13 @@ class WireMapExact(val spec1: String, val spec2: String) {
             val d1 = distanceTo(i, wire1)
             val d2 = distanceTo(i, wire2)
             val sum = d1 + d2
-            if (sum < closest) closest = sum
+            closest = min(closest, sum)
         }
         return closest
     }
 
     fun distanceTo(point: Coord, wire: Wire): Int {
-        var distance = 0
-        for (p in wire.points) {
-            distance++
-            if (p == point) {
-                return distance
-            }
-        }
-        throw Exception("Point $point not found on wire $wire")
+        return wire.points.indexOf(point) + 1
     }
 
     fun parse(line: String, wire: Wire) {

@@ -5,7 +5,6 @@ import com.ckfce.aoc19.day1.Day1Part2
 import com.ckfce.aoc19.day1.ModuleMassCalculator
 import com.ckfce.aoc19.day2.Day2
 import com.ckfce.aoc19.day2.Day2Part2
-import com.ckfce.aoc19.day3.Day3
 import com.ckfce.aoc19.day3.Day3Part2
 
 class Runner {

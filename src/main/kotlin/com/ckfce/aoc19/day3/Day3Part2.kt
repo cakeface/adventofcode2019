@@ -11,7 +11,7 @@ class Day3Part2: AocRunner {
         val i = inputLines()
         val map = WireMapExact(i[0], i[1])
         map.parse()
-        return map.closestIntersectionTraveled()
+        return map.fullClosestTraveled()
     }
 
     fun inputLines(): List<String> {
