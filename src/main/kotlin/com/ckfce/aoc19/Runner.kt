@@ -6,6 +6,7 @@ import com.ckfce.aoc19.day1.ModuleMassCalculator
 import com.ckfce.aoc19.day2.Day2
 import com.ckfce.aoc19.day2.Day2Part2
 import com.ckfce.aoc19.day3.Day3Part2
+import com.ckfce.aoc19.day4.Day4
 
 class Runner {
 
@@ -13,7 +14,7 @@ class Runner {
 
 		@JvmStatic
 		fun main(args: Array<String>) {
-			val day = Day3Part2()
+			val day = Day4()
 			println("${day.label()}: ${day.run()}")
 		}
 
